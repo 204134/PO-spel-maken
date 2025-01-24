@@ -1,5 +1,5 @@
 import pygame
-
+"een testje"
 # Initialiseer pygame
 pygame.init()
 
