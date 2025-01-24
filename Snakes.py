@@ -18,7 +18,7 @@ font = pygame.font.Font(None, 50)
 # Slang variabele
 x = 300
 y = 250
-snelheid = 5
+snelheid = 25
 left = False
 right = False
 up = False
@@ -104,6 +104,6 @@ while running:
             game_over = False
 
     pygame.display.flip()  # Werk het scherm bij
-    clock.tick(30)  # Beperk de framesnelheid tot 30 FPS
+    clock.tick(10)  # Beperk de framesnelheid tot 30 FPS
 
 pygame.quit()
