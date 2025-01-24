@@ -7,7 +7,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Snakes")
 
-# Kleur en klok instellen
+#Kleur en klok instellen
 white = (255, 255, 255)
 black = (0, 0, 0)
 green = (0, 255, 0)
@@ -104,6 +104,6 @@ while running:
             game_over = False
 
     pygame.display.flip()  # Werk het scherm bij
-    clock.tick(10)  # Beperk de framesnelheid tot 30 FPS
+    clock.tick(5)  # Beperk de framesnelheid tot 30 FPS
 
 pygame.quit()
