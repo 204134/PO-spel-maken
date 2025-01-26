@@ -12,6 +12,7 @@ white = (255, 255, 255)
 black = (0, 0, 0)
 green = (0, 255, 0)
 red = (255, 0, 0)
+gray = (169, 169, 169)
 clock = pygame.time.Clock()
 font = pygame.font.Font(None, 50)
 
@@ -88,10 +89,10 @@ while running:
         # Teken de slang
         pygame.draw.rect(screen, green, (x, y, 25, 25))
     else:
-        # Teken het groene vierkant en de tekst
+        #game over text
         game_over_rect = pygame.Rect(150, 200, 500, 150)
-        pygame.draw.rect(screen, green, game_over_rect)
-
+        pygame.draw.rect(screen, gray, game_over_rect)
+        pygame.draw.rect(screen, red, game_over_rect, 5)
         lose_text = font.render("Jij hebt dit spel verloren", True, white)
         lose_text_rect = lose_text.get_rect(center=game_over_rect.center)
         screen.blit(lose_text, lose_text_rect)
