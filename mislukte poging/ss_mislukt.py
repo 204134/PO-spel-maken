@@ -1,0 +1,28 @@
+import pygame
+
+# Initialiseer pygame
+pygame.init()
+
+class Settings():
+    def __init__(self):
+        
+        # Scherm instellen
+        self.screen = pygame.display.set_mode((800, 600))
+
+        # Kleur en klok instellen
+        self.white = (255, 255, 255)
+        self.black = (0, 0, 0)
+        self.green = (0, 255, 0)
+        self.red = (255, 0, 0)
+        self.font = pygame.font.Font(None, 50)
+        
+        # Slang settings
+        self.snelheid = 25
+        self.snake_width = 25
+        self.snake_height = 25
+        
+        # Text settings
+        self.game_over_rect = pygame.Rect(150, 200, 500, 150)
+        self.lose_text = self.font.render("Jij hebt dit spel verloren", True, self.white)
+        self.lose_text_rect = self.lose_text.get_rect(center=self.game_over_rect.center)
+        
