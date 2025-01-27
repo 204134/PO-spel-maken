@@ -42,7 +42,7 @@ while running:
     
     if not game_over:
         # Beweeg de slang, update & controleer locatie
-        apple.draw(game_over)
+        apple.draw(settings.screen, game_over)
         moves_list = snake_head.move(up, down, left, right, moves_list)
         snake_head.update(game_over)
         for snake_part in snake:
