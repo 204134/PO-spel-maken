@@ -5,7 +5,7 @@ from snake_settings import Settings
 pygame.init()
 
 # Initialiseer onze eigen modules
-settings = Settings()
+ssettings = Settings()
 
 class Game_functions():
     def __init__(self):
