@@ -8,9 +8,9 @@ pygame.init()
 
 # initialiseer de modules
 settings = Settings()
-gf = Game_functions()
 apple = Apple()
-
+gf = Game_functions()
+ 
 class Snake_piece():
     def __init__(self, position):
         # Slang variabele
@@ -25,18 +25,23 @@ class Snake_piece():
                 self.x -= settings.snelheid
                 #print('1')
                 moves_list.append('left')
-            elif right:
+            elif right and gf.start_right:
                 self.x += settings.snelheid
                 #print('2')
                 moves_list.append('right')
-            elif up:
+            elif up and gf.start_right:
                 self.y -= settings.snelheid
                 #print('3')
+                if gf.start_right:
+                    moves_list.append('right')
                 moves_list.append('up')
-            elif down:
+            elif down and gf.start_right:
                 self.y += settings.snelheid
                 #print('4')
+                if gf.start_right:
+                    moves_list.append('right')
                 moves_list.append('down')
+            gf.start_right = False
             return moves_list
         else:
             #print(moves_list)

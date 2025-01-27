@@ -16,6 +16,7 @@ class Game_functions():
         self.right = False
         self.up = False
         self.down = False
+        self.start_right = True
         
     def check_keydown_events(self, game_over):
         #print("checking events..")
@@ -28,15 +29,18 @@ class Game_functions():
                 if event.key == pygame.K_UP and not self.down:
                     self.up = True
                     self.left = self.right = False
+                    #self.start_right = False
                 elif event.key == pygame.K_DOWN and not self.up:
                     self.down = True
                     self.left = self.right = False
-                elif event.key == pygame.K_LEFT and not self.right:
+                    #self.start_right = False
+                elif event.key == pygame.K_LEFT and not (self.right or self.start_right):
                     self.left = True
                     self.up = self.down = False
                 elif event.key == pygame.K_RIGHT and not self.left:
                     self.right = True
                     self.up = self.down = False
+                    #self.start_right = False
                     
         return self.up, self.down, self.left, self.right
     
