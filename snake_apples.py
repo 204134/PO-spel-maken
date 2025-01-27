@@ -13,7 +13,7 @@ class Apple():
 
     def draw(self, screen, game_over):
         if not game_over:
-            if not self.apple_list:  # Als er geen appel is, genereer een nieuwe
+            if not self.apple_list:  #Als er geen appel is, genereer een nieuwe
                 width = 30
                 height = 30
                 self.x = randint(0, 800 - width)

@@ -27,7 +27,7 @@ snake.append(snake2)
 snake3 = Snake_piece(3)
 snake.append(snake3)
 
-# enkele instellingen
+#Enkele instellingen
 pygame.display.set_caption("Snakes")
 clock = pygame.time.Clock()
 
