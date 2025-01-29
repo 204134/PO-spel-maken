@@ -12,50 +12,51 @@ apple = Apple()
 gf = Game_functions()
  
 class Snake_piece():
-    def __init__(self, position):
+    def __init__(self, position, start_right):
         # Slang variabele
-        self.x = (gf.x - position*settings.snake_width)
+        self.x = (gf.x - (position)*settings.snake_width)
         self.y = gf.y
         self.position = position
         self.moves_list=[]
+        self.start_right = start_right
         
     def move(self, up, down, left, right, moves_list = []):
+        print (self.start_right)
         if self.position == 0:
             if left:
                 self.x -= settings.snelheid
-                #print('1')
                 moves_list.append('left')
-            elif right and gf.start_right:
+            elif right or (right and self.start_right):
                 self.x += settings.snelheid
-                #print('2')
-                moves_list.append('right')
-            elif up and gf.start_right:
+                if not self.start_right:
+                    moves_list.append('right')
+                self.start_right = False
+            elif up or (up and self.start_right):
+                if self.start_right:
+                    self.x += settings.snelheid
                 self.y -= settings.snelheid
-                #print('3')
-                if gf.start_right:
-                    moves_list.append('right')
                 moves_list.append('up')
-            elif down and gf.start_right:
+                self.start_right = False
+            elif down or (down and self.start_right):
+                if self.start_right:
+                    self.y -= settings.snelheid
                 self.y += settings.snelheid
-                #print('4')
-                if gf.start_right:
-                    moves_list.append('right')
                 moves_list.append('down')
-            gf.start_right = False
+                self.start_right = False
             return moves_list
         else:
             #print(moves_list)
+            if self.start_right and (right or down or up):
+                    self.x += settings.snelheid
+                    self.start_right = False
             if moves_list:
                 try:
-                    direction = moves_list[-(1+self.position)]
+                    direction = moves_list[-self.position]
                 except IndexError:
                     try:
-                        direction = moves_list[-self.position]
+                        direction = moves_list[-self.position+1]
                     except IndexError:
-                        try:
-                            direction = moves_list[-self.position+1]
-                        except IndexError:
-                            direction = moves_list[-1]
+                        direction = moves_list[-1]
                 if direction == 'left':
                     self.x -= settings.snelheid
                 elif direction == 'right':
@@ -83,3 +84,8 @@ class Snake_piece():
             return True
         else:
             return False
+        
+    '''  
+    def reset(self):
+        self.start_right = True
+    '''

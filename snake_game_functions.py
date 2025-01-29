@@ -29,18 +29,18 @@ class Game_functions():
                 if event.key == pygame.K_UP and not self.down:
                     self.up = True
                     self.left = self.right = False
-                    #self.start_right = False
+                    self.start_right = False
                 elif event.key == pygame.K_DOWN and not self.up:
                     self.down = True
                     self.left = self.right = False
-                    #self.start_right = False
+                    self.start_right = False
                 elif event.key == pygame.K_LEFT and not (self.right or self.start_right):
                     self.left = True
                     self.up = self.down = False
                 elif event.key == pygame.K_RIGHT and not self.left:
                     self.right = True
                     self.up = self.down = False
-                    #self.start_right = False
+                    self.start_right = False
                     
         return self.up, self.down, self.left, self.right
     
@@ -50,5 +50,5 @@ class Game_functions():
         self.x = 300
         self.y = 250
         self.left = self.right = self.up = self.down = False
-        self.moves_list.clear()
+        self.start_right = True
         

@@ -18,13 +18,13 @@ apple = Apple()
 snake = []
 moves_list = []
 # het slangenhoofd
-snake_head = Snake_piece(0)
+snake_head = Snake_piece(0, True)
 # de eerste lichaamsdelen
-snake1 = Snake_piece(1)
+snake1 = Snake_piece(1, True)
 snake.append(snake1)
-snake2 = Snake_piece(2)
+snake2 = Snake_piece(2, True)
 snake.append(snake2)
-snake3 = Snake_piece(3)
+snake3 = Snake_piece(3, True)
 snake.append(snake3)
 
 # enkele instellingen
@@ -43,19 +43,21 @@ while running:
     if not game_over:
         # Beweeg de slang, update & controleer locatie
         apple.draw(game_over)
-        moves_list = snake_head.move(up, down, left, right, moves_list)
         snake_head.update(game_over)
+        moves_list = snake_head.move(up, down, left, right, moves_list)
         for snake_part in snake:
-            snake_part.move(up, down, left, right, moves_list)
             snake_part.update(game_over)
+            snake_part.move(up, down, left, right, moves_list)
         game_over = snake_head.check_pos()
         if snake_head.apple_collision():
             n = len(snake)
-            snake_piece = Snake_piece(n)
+            snake_piece = Snake_piece(n, False)
             snake.append(snake_piece)
         
     else:
         # Teken het groene vierkant en de tekst
+        gf.reset()
+        game_over = False
         pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
         settings.screen.blit(settings.lose_text, settings.lose_text_rect) 
         button.draw(200, 400, 400, 50, "Opnieuw starten", settings.red, settings.white)
