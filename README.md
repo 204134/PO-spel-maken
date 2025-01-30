@@ -12,6 +12,17 @@ Dit is onze versie van het klassieke spel "Snakes". Onze project is gemaakt als 
 3. Open "Snakes.py".
 4. Veel speel plezier :  )
 ```
+## Feedback geven / Bugs melden
+**Feedback:**
+  - Feedback kunt u geven in het volgende formulier 
+<br>     https://forms.gle/MaFYrQyhX5sX9y2b6
+<br>
+
+**Bugs:**
+  - Bugs kunt u melden in het volgende formulier
+<br>    https://forms.gle/DiYgXztTgJiyTQUS6
+<br>
+
 ## Contributies
 Dit spel is gemaakt door:
 <br>
