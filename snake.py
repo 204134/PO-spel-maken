@@ -21,7 +21,6 @@ class Snake_piece():
         
     def move(self, up, down, left, right, moves_list = []):
         if self.position == 0:
-            x_oud = self.x
             if left:
                 self.x -= settings.snelheid
                 moves_list.append('left')
@@ -38,9 +37,6 @@ class Snake_piece():
                 #print('4')
                 moves_list.append('down')
             return moves_list
-            x_nieuw = self.x
-            #delta_x = x_nieuw - x_oud
-            #print(delta_x)
         else:
             #print(moves_list)
             if moves_list:
