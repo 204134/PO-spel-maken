@@ -22,7 +22,9 @@ class Game_functions():
         
     def check_keydown_events(self, game_over):
         #print("checking events..")
-        for event in pygame.event.get():
+        events = pygame.event.get()
+        if events:
+            event = events[0]
             if event.type == pygame.QUIT:
                 running = False
                 
