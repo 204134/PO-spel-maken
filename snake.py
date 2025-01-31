@@ -73,7 +73,7 @@ class Snake_piece():
             pygame.draw.rect(settings.screen, settings.green, (self.x, self.y, settings.snake_width, settings.snake_height))
         
     def apple_collision(self):
+        print("colission checking")
         if self.x == apple.x and self.y == apple.y:
-            apple.new_position()  # Genereer direct een nieuwe positie
             return True
         return False

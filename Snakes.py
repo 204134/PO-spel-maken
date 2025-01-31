@@ -49,7 +49,8 @@ while running:
             snake_part.move(up, down, left, right, moves_list)
             snake_part.update(game_over)
         game_over = snake_head.check_pos()
-        if snake_head.apple_collision():
+        check = snake_head.apple_collision()
+        if check:
             n = len(snake)
             snake_piece = Snake_piece(n)
             snake.append(snake_piece)
