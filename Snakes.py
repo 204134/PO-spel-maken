@@ -7,7 +7,6 @@ from snake_apples import Apple
 
 # Initialiseer pygame
 pygame.init()
-"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
 # Initialiseer onze eigen modules
 settings = Settings()
