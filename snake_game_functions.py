@@ -18,10 +18,9 @@ class Game_functions():
         self.right = False
         self.up = False
         self.down = False
-        self.start_right = False
+        self.start_right = True
         
     def check_keydown_events(self, game_over):
-        global gestart
         #print("checking events..")
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -29,20 +28,19 @@ class Game_functions():
                 
             # Beweeg de slang alleen als het spel niet over is
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP and not (self.down or self.start_right) and gestart: #Gestart zorgt ervoor dat er niet kan worden begonnen met naar links te gaan
+                if event.key == pygame.K_UP and not (self.down or self.start_right): #Gestart zorgt ervoor dat er niet kan worden begonnen met naar links te gaan
                     self.up = True
                     self.left = self.right = False
-                elif event.key == pygame.K_DOWN and not (self.up or self.start_right) and gestart:
+                elif event.key == pygame.K_DOWN and not (self.up or self.start_right):
                     self.down = True
                     self.left = self.right = False
-                elif event.key == pygame.K_LEFT and not (self.right or self.start_right) and gestart:
+                elif event.key == pygame.K_LEFT and not (self.right or self.start_right):
                     self.left = True
                     self.up = self.down = False
                 elif event.key == pygame.K_RIGHT and not self.left:
                     self.right = True
                     self.up = self.down = False
                     self.start_right = False
-                    gestart = True
                     
         return self.up, self.down, self.left, self.right
     
