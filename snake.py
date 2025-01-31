@@ -72,9 +72,9 @@ class Snake_piece():
         # Teken de slang
         if not game_over:
             pygame.draw.rect(settings.screen, settings.green, (self.x, self.y, settings.snake_width, settings.snake_height))
-    
+        
     def apple_collision(self):
         if self.x == apple.x and self.y == apple.y:
+            apple.new_position()  # Genereer direct een nieuwe positie
             return True
-        else:
-            return False
+        return False
