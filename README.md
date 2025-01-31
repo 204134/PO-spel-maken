@@ -8,7 +8,8 @@ Dit is onze versie van het klassieke spel "Snakes". Onze project is gemaakt als 
 ## Installeer Instructies
 ```
 1. Installeer alle files in de "Main" branch.
-2. Stop alle files die je zojuist heb geinstalleerd in hetzelfde mapje.
+2. Stop alle files die u zojuist heb geinstalleerd in hetzelfde mapje.
+3. Installeer "Pygame" als u het nog niet heeft
 3. Open "Snakes.py".
 4. Veel speel plezier :  )
 ```
