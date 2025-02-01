@@ -30,38 +30,56 @@ snake.append(snake3)
 #Enkele instellingen
 pygame.display.set_caption("Snakes")
 clock = pygame.time.Clock()
+speed=settings.spel_snelheid
 
 # Hoofdlus
 running = True
 game_over = False
 
+# maak de eerste appel
+apple_x, apple_y = apple.new_pos()
+
 while running:
     settings.screen.fill(settings.black)  #Vul de achtergrond met zwart
     up, down, left, right = gf.check_keydown_events(game_over)
     game_over = button.check_clicked(game_over)
-    
     if not game_over:
         # Beweeg de slang, update & controleer locatie
-        apple.draw(settings.screen, game_over)
+        apple.draw(settings.screen, game_over, apple_x, apple_y)
         moves_list = snake_head.move(up, down, left, right, moves_list)
         snake_head.update(game_over)
-        for snake_part in snake:
-            snake_part.move(up, down, left, right, moves_list)
-            snake_part.update(game_over)
-        game_over = snake_head.check_pos()
-        check = snake_head.apple_collision()
-        if check:
-            n = len(snake)
-            snake_piece = Snake_piece(n)
-            snake.append(snake_piece)
+        if up or down or left or right:
+            for snake_part in snake:
+                snake_x, snake_y,direction = snake_part.move(up, down, left, right, moves_list)
+                snake_part.update(game_over)
+                if snake_head.collision(snake_x, snake_y):
+                    game_over = True
+           
+        else:
+            for snake_part in snake:
+                snake_part.move(up, down, left, right, moves_list)
+                snake_part.update(game_over)
+        if snake_head.check_pos():
+            game_over = True
         
+        #if up or down or left or right: (kijk wat er gebeurt als je 'if snake_head.collision(apple_x, apple_y):' hiervoor vervangt. Het is erg leuk.
+        if snake_head.collision(apple_x, apple_y):
+            apple_x, apple_y = apple.new_pos()
+            n = len(snake)+1
+            snake_piece = Snake_piece(n, snake_x, snake_y, direction, True)
+            snake_piece.update(game_over, settings.green)
+            snake.append(snake_piece)
+            #print(snake)
+            speed += settings.snelheid_verhoging
     else:
         # Teken het groene vierkant en de tekst
+        #print(game_over)
         pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
         settings.screen.blit(settings.lose_text, settings.lose_text_rect) 
         button.draw(200, 400, 400, 50, "Opnieuw starten", settings.red, settings.white)
        
     pygame.display.flip()  # Werk het scherm bij
-    clock.tick(5)  # Beperk de framesnelheid tot 30 FPS
+    clock.tick(speed)  # Beperk de framesnelheid tot 30 FPS
+    
 
 pygame.quit()

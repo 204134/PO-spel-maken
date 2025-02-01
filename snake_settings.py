@@ -9,6 +9,10 @@ class Settings():
         # Scherm instellen
         self.screen = pygame.display.set_mode((800, 600))
 
+        # Spel settings
+        self.spel_snelheid = 8
+        self.snelheid_verhoging = 0.6 # hoeveel sneller de slang wordt na een appel gegeten te hebben
+
         # Kleur en klok instellen
         self.white = (255, 255, 255)
         self.black = (0, 0, 0)
