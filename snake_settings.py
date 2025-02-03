@@ -1,3 +1,4 @@
+
 import pygame
 
 # Initialiseer pygame
@@ -38,4 +39,3 @@ class Settings():
         self.appel = 'appel.png'
         self.slangenhoofd = 'appel.png'
         self.slangenlichaam = 'appel.png'
-        
