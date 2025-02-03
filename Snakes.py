@@ -1,110 +1,90 @@
 import pygame
-"testje"
+from snake_settings import Settings
+from snake_game_functions import Game_functions
+from snake import Snake_piece
+from snake_buttons import Button
+from snake_apples import Apple
+
 # Initialiseer pygame
 pygame.init()
 
-# Scherm instellen
-screen = pygame.display.set_mode((800, 600))
+# Initialiseer onze eigen modules
+settings = Settings()
+gf = Game_functions()
+button = Button()
+apple = Apple()
+
+# Initialiseer lijsten
+snake = []
+moves_list = []
+# het slangenhoofd
+snake_head = Snake_piece(0)
+# de eerste lichaamsdelen
+snake1 = Snake_piece(1)
+snake.append(snake1)
+snake2 = Snake_piece(2)
+snake.append(snake2)
+snake3 = Snake_piece(3)
+snake.append(snake3)
+
+#Enkele instellingen
 pygame.display.set_caption("Snakes")
-
-#Kleur en klok instellen
-white = (255, 255, 255)
-black = (0, 0, 0)
-green = (0, 255, 0)
-red = (255, 0, 0)
-gray = (169, 169, 169)
 clock = pygame.time.Clock()
-font = pygame.font.Font(None, 50)
-
-# Slang variabele
-x = 300
-y = 250
-snelheid = 25
-left = False
-right = False
-up = False
-down = False
+speed=settings.spel_snelheid
 
 # Hoofdlus
 running = True
 game_over = False
 
-def draw_button(x, y, w, h, text, color, text_color):
-    #Tekent een knop en retourneert True als erop geklikt is.
-    mouse = pygame.mouse.get_pos()
-    click = pygame.mouse.get_pressed()
-
-    # Controleer of de muis binnen de knop is
-    if x < mouse[0] < x + w and y < mouse[1] < y + h:
-        pygame.draw.rect(screen, color, (x, y, w, h))
-        if click[0] == 1:  # Linkermuisknop ingedrukt
-            return True
-    else:
-        pygame.draw.rect(screen, color, (x, y, w, h), 2)
-
-    # Voeg tekst toe aan de knop
-    text_surface = font.render(text, True, text_color)
-    text_rect = text_surface.get_rect(center=(x + w // 2, y + h // 2))
-    screen.blit(text_surface, text_rect)
-
-    return False
+# maak de eerste appel
+apple_x, apple_y = apple.new_pos()
 
 while running:
-    screen.fill(black)  #Vul de achtergrond met zwart
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-        # Beweeg de slang alleen als het spel niet over is
-        if not game_over and event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP and not down:
-                up = True
-                left = right = False
-            elif event.key == pygame.K_DOWN and not up:
-                down = True
-                left = right = False
-            elif event.key == pygame.K_LEFT and not right:
-                left = True
-                up = down = False
-            elif event.key == pygame.K_RIGHT and not left:
-                right = True
-                up = down = False
-
+    settings.screen.fill(settings.black)  #Vul de achtergrond met zwart
+    up, down, left, right = gf.check_keydown_events(game_over)
+    game_over = button.check_clicked(game_over)
     if not game_over:
-        # Beweeg de slang
-        if left:
-            x -= snelheid
-        if right:
-            x += snelheid
-        if up:
-            y -= snelheid
-        if down:
-            y += snelheid
-
-        # Controleer of de slang buiten het scherm gaat
-        if x >= 800 or x < 0 or y >= 600 or y < 0:
+        # Beweeg de slang, update & controleer locatie
+        apple.draw(game_over, apple_x, apple_y)
+        moves_list = snake_head.move(up, down, left, right, moves_list)
+        snake_head.update(game_over)
+        if up or down or left or right:
+            for snake_part in snake:
+                snake_x, snake_y,direction = snake_part.move(up, down, left, right, moves_list)
+                snake_part.update(game_over)
+                if snake_head.collision(snake_x, snake_y):
+                    game_over = True
+           
+        else:
+            for snake_part in snake:
+                snake_part.move(up, down, left, right, moves_list)
+                snake_part.update(game_over)
+        if snake_head.check_pos():
             game_over = True
-
-        # Teken de slang
-        pygame.draw.rect(screen, green, (x, y, 25, 25))
-    else:
-        #game over text
-        game_over_rect = pygame.Rect(150, 200, 500, 150)
-        pygame.draw.rect(screen, gray, game_over_rect)
-        pygame.draw.rect(screen, red, game_over_rect, 5)
-        lose_text = font.render("Jij hebt dit spel verloren", True, white)
-        lose_text_rect = lose_text.get_rect(center=game_over_rect.center)
-        screen.blit(lose_text, lose_text_rect)
         
-        if draw_button(200, 400, 400, 50, "Opnieuw starten", red, white):
-            # Reset de spelstatus
-            x = 300
-            y = 250
-            left = right = up = down = False
-            game_over = False
+        #if up or down or left or right: (kijk wat er gebeurt als je 'if snake_head.collision(apple_x, apple_y):' hiervoor vervangt. Het is erg leuk.
+        if snake_head.collision(apple_x, apple_y):
+            apple_x, apple_y = apple.new_pos()
+            n = len(snake)+1
+            snake_piece = Snake_piece(n, snake_x, snake_y, direction, True)
+            snake_piece.update(game_over, settings.green)
+            snake.append(snake_piece)
+            #print(snake)
+            speed += settings.snelheid_verhoging
+    else:
+        # Teken het groene vierkant en de tekst
+        #print(game_over)
+        pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
+        settings.screen.blit(settings.lose_text, settings.lose_text_rect) 
+        button.draw(200, 400, 400, 50, "Opnieuw starten", settings.red, settings.white)
+        print('reset')
+        gf.reset()
+        game_over = False
 
+        
+       
     pygame.display.flip()  # Werk het scherm bij
-    clock.tick(5)  # Beperk de framesnelheid tot 30 FPS
+    clock.tick(speed)  # Beperk de framesnelheid tot 30 FPS
+    
 
 pygame.quit()

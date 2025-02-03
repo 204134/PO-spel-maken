@@ -15,6 +15,13 @@ class Snake_piece():
     def __init__(self, position, x=0, y= 0, direct = 'right', new = False):
         # Slang variabele
         print (x,y,direct)
+        if position == 0:
+            self.image = pygame.image.load(settings.slangenhoofd).convert_alpha()
+            self.imageSmall = pygame.transform.scale(self.image, (settings.snake_width, settings.snake_height))
+        else:
+            self.image = pygame.image.load(settings.slangenlichaam).convert_alpha()
+            self.imageSmall = pygame.transform.scale(self.image, (settings.snake_width, settings.snake_height))
+
         if x==0 and y==0:
             self.x = (gf.x - position*settings.snake_width)
             self.y = gf.y
@@ -94,7 +101,8 @@ class Snake_piece():
     def update(self, game_over, color=settings.green):
         # Teken de slang
         if not game_over:
-            pygame.draw.rect(settings.screen, color, (self.x, self.y, settings.snake_width, settings.snake_height))
+            settings.screen.blit(self.imageSmall, (self.x, self.y))
+            #pygame.draw.rect(settings.screen, color, (self.x, self.y, settings.snake_width, settings.snake_height))
         
     def collision(self, x, y):
         #print("colission checking")
