@@ -38,4 +38,3 @@ class Settings():
         self.appel = 'appel.png'
         self.slangenhoofd = 'Snake-head.png'
         self.slangenlichaam = 'appel.png'
-        

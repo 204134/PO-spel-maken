@@ -1,3 +1,4 @@
+   
 import pygame
 from snake_settings import Settings
 from snake_game_functions import Game_functions
@@ -101,7 +102,6 @@ class Snake_piece():
     def update(self, game_over, color=settings.green):
         # Teken de slang
         if not game_over:
-            pygame.draw.rect(settings.screen, color, (self.x, self.y, settings.snake_width, settings.snake_height))
             settings.screen.blit(self.imageSmall, (self.x, self.y))
             #pygame.draw.rect(settings.screen, color, (self.x, self.y, settings.snake_width, settings.snake_height))
         
@@ -111,4 +111,4 @@ class Snake_piece():
             print ("collided")
             return True
         return False
-    
+

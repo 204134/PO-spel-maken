@@ -31,4 +31,3 @@ class Apple():
         self.y = randrange(0, 600 - settings.apple_height, 25)
             #self.apple_list.append('apple')  # Voeg een appel toe aan de lijst
         return self.x,self.y
-    

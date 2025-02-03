@@ -36,6 +36,7 @@ black = (0, 0, 0)
 green = (0, 255, 0)
 red = (255, 0, 0)
 gray = (169, 169, 169)
+
 clock = pygame.time.Clock()
 speed=settings.spel_snelheid
 
