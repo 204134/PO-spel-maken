@@ -9,10 +9,6 @@ class Settings():
         # Scherm instellen
         self.screen = pygame.display.set_mode((800, 600))
 
-        # Spel settings
-        self.spel_snelheid = 8
-        self.snelheid_verhoging = 0.6 # hoeveel sneller de slang wordt na een appel gegeten te hebben
-
         # Kleur en klok instellen
         self.white = (255, 255, 255)
         self.black = (0, 0, 0)
@@ -25,17 +21,8 @@ class Settings():
         self.snake_width = 25
         self.snake_height = 25
         
-        # Appel settings
-        self.apple_width = 25
-        self.apple_height = 25
-        
         # Text settings
         self.game_over_rect = pygame.Rect(150, 200, 500, 150)
         self.lose_text = self.font.render("Jij hebt dit spel verloren", True, self.white)
         self.lose_text_rect = self.lose_text.get_rect(center=self.game_over_rect.center)
-        
-        # Gebruikte afbeeldingen:
-        self.appel = 'appel.png'
-        self.slangenhoofd = 'appel.png'
-        self.slangenlichaam = 'appel.png'
         

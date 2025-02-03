@@ -8,6 +8,7 @@ settings = Settings()
 class Apple():
     def __init__(self):
         self.image = pygame.image.load("appel.png").convert_alpha()
+        self.image = pygame.image.load(settings.appel).convert_alpha()
         self.imageSmall = pygame.transform.scale(self.image, (settings.apple_width, settings.apple_height))
         self.apple_list = []
         self.x = 0
@@ -17,6 +18,10 @@ class Apple():
         if not game_over:
             # Teken de appel op het scherm
             screen.blit(self.imageSmall, (x, y))
+    def draw(self, game_over, x, y):
+        if not game_over:
+            # Teken de appel op het scherm
+            settings.screen.blit(self.imageSmall, (x, y))
     
     def new_pos(self):
         #if not apple_list:#Als er geen appel is, genereer een nieuwe
