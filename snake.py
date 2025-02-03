@@ -18,7 +18,7 @@ class Snake_piece():
         print (x,y,direct)
         if position == 0:
             self.image = pygame.image.load(settings.slangenhoofd).convert_alpha()
-            self.imageSmall = pygame.transform.scale(self.image, (settings.snake_width, settings.snake_height))
+            self.imageSmall = pygame.transform.scale(self.image, (settings.snakeHead_width, settings.snakeHead_height))
         else:
             self.image = pygame.image.load(settings.slangenlichaam).convert_alpha()
             self.imageSmall = pygame.transform.scale(self.image, (settings.snake_width, settings.snake_height))

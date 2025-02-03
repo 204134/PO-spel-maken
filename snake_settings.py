@@ -22,6 +22,8 @@ class Settings():
         
         # Slang settings
         self.snelheid = 25
+        self.snakeHead_width = 45
+        self.snakeHead_height = 30
         self.snake_width = 25
         self.snake_height = 25
         
@@ -37,4 +39,4 @@ class Settings():
         # Gebruikte afbeeldingen:
         self.appel = 'appel.png'
         self.slangenhoofd = 'Snake-head.png'
-        self.slangenlichaam = 'appel.png'
+        self.slangenlichaam = 'groen-slanglichaam.png'
