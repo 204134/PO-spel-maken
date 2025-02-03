@@ -34,3 +34,8 @@ class Settings():
         self.lose_text = self.font.render("Jij hebt dit spel verloren", True, self.white)
         self.lose_text_rect = self.lose_text.get_rect(center=self.game_over_rect.center)
         
+        # Gebruikte afbeeldingen:
+        self.appel = 'appel.png'
+        self.slangenhoofd = 'appel.png'
+        self.slangenlichaam = 'appel.png'
+        

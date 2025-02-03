@@ -45,7 +45,7 @@ while running:
     game_over = button.check_clicked(game_over)
     if not game_over:
         # Beweeg de slang, update & controleer locatie
-        apple.draw(settings.screen, game_over, apple_x, apple_y)
+        apple.draw(game_over, apple_x, apple_y)
         moves_list = snake_head.move(up, down, left, right, moves_list)
         snake_head.update(game_over)
         if up or down or left or right:
@@ -77,6 +77,11 @@ while running:
         pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
         settings.screen.blit(settings.lose_text, settings.lose_text_rect) 
         button.draw(200, 400, 400, 50, "Opnieuw starten", settings.red, settings.white)
+        print('reset')
+        gf.reset()
+        game_over = False
+
+        
        
     pygame.display.flip()  # Werk het scherm bij
     clock.tick(speed)  # Beperk de framesnelheid tot 30 FPS
