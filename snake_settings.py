@@ -36,6 +36,5 @@ class Settings():
         
         # Gebruikte afbeeldingen:
         self.appel = 'appel.png'
-        self.slangenhoofd = 'appel.png'
+        self.slangenhoofd = 'Snake-head.png'
         self.slangenlichaam = 'appel.png'
-        

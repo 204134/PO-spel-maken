@@ -29,6 +29,14 @@ snake.append(snake3)
 
 #Enkele instellingen
 pygame.display.set_caption("Snakes")
+
+#Kleur en klok instellen
+white = (255, 255, 255)
+black = (0, 0, 0)
+green = (0, 255, 0)
+red = (255, 0, 0)
+gray = (169, 169, 169)
+
 clock = pygame.time.Clock()
 speed=settings.spel_snelheid
 
@@ -72,6 +80,13 @@ while running:
             #print(snake)
             speed += settings.snelheid_verhoging
     else:
+        #game over text
+        game_over_rect = pygame.Rect(150, 200, 500, 150)
+        pygame.draw.rect(screen, gray, game_over_rect)
+        pygame.draw.rect(screen, red, game_over_rect, 5)
+        lose_text = font.render("Jij hebt dit spel verloren", True, white)
+        lose_text_rect = lose_text.get_rect(center=game_over_rect.center)
+        screen.blit(lose_text, lose_text_rect)
         # Teken het groene vierkant en de tekst
         #print(game_over)
         pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
