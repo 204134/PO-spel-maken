@@ -8,6 +8,16 @@ class Settings():
         
         # Scherm instellen
         self.screen = pygame.display.set_mode((800, 600))
+        
+        '''for i in range(192): 
+            column = i % 12
+            row = i // 16
+            if i % 2 == 0:
+                pygame.draw.rect(settings.screen, 'light gray', [800 - (column * 50), row * 25, 25, 25]) 
+            else:                                                                                
+                pygame.draw.rect(settings.screen, 'light gray', [775 - (column * 50), row * 25, 25, 25]) #Omdat de kleuren niet onder elkaar zitten, heb twee rijen nodig omdat het lichtgrijze bij allebij ergens anders begint.
+        '''
+        
 
         # Spel settings
         self.spel_snelheid = 8

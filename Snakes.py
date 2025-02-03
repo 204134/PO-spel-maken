@@ -49,6 +49,18 @@ apple_x, apple_y = apple.new_pos()
 
 while running:
     settings.screen.fill(settings.black)  #Vul de achtergrond met zwart
+    for row in range(24):  # Er zijn 24 rijen van 25 pixels
+        for col in range(32):  # Er zijn 32 kolommen van 25 pixels
+        # Bepaal de kleur op basis van of het een zwart of lichtgrijs vierkant is
+            if (row + col) % 2 == 0:
+                color = 'light gray'
+            else:
+                color = settings.black
+        
+        # Teken het vierkant
+        pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
+ #Omdat de kleuren niet onder elkaar zitten, heb twee rijen nodig omdat het lichtgrijze bij allebij ergens anders begint.
+        
     up, down, left, right = gf.check_keydown_events(game_over)
     game_over = button.check_clicked(game_over)
     if not game_over:
@@ -82,11 +94,11 @@ while running:
     else:
         #game over text
         game_over_rect = pygame.Rect(150, 200, 500, 150)
-        pygame.draw.rect(screen, gray, game_over_rect)
-        pygame.draw.rect(screen, red, game_over_rect, 5)
-        lose_text = font.render("Jij hebt dit spel verloren", True, white)
+        pygame.draw.rect(settings.screen, gray, game_over_rect)
+        pygame.draw.rect(settings.screen, red, game_over_rect, 5)
+        lose_text = settings.font.render("Jij hebt dit spel verloren", True, white)
         lose_text_rect = lose_text.get_rect(center=game_over_rect.center)
-        screen.blit(lose_text, lose_text_rect)
+        settings.screen.blit(lose_text, lose_text_rect)
         # Teken het groene vierkant en de tekst
         #print(game_over)
         pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
