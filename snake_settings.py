@@ -33,7 +33,7 @@ class Settings():
         # Slang settings
         self.snelheid = 25
         self.snakeHead_width = 45
-        self.snakeHead_height = 30
+        self.snakeHead_height = 25
         self.snake_width = 25
         self.snake_height = 25
         
@@ -47,6 +47,6 @@ class Settings():
         self.lose_text_rect = self.lose_text.get_rect(center=self.game_over_rect.center)
         
         # Gebruikte afbeeldingen:
-        self.appel = 'appel.png'
+        self.appel = 'appel_transparant.png' #ChatGPT is gebruikt om van de zwarte achtergrond een transparante achtergrond te maken
         self.slangenhoofd = 'Snake-head.png'
         self.slangenlichaam = 'groen-slanglichaam.png'
