@@ -55,11 +55,10 @@ while running:
             if (row + col) % 2 == 0:
                 color = 'light gray'
             else:
-                color = settings.black
+                color = 'dark gray'
         
-        # Teken het vierkant
-        pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
- #Omdat de kleuren niet onder elkaar zitten, heb twee rijen nodig omdat het lichtgrijze bij allebij ergens anders begint.
+            # Teken het vierkant
+            pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
         
     up, down, left, right = gf.check_keydown_events(game_over)
     game_over = button.check_clicked(game_over)
