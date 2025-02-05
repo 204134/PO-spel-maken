@@ -58,16 +58,7 @@ class Game_functions():
         self.left = self.right = self.up = self.down = False
         self.moves_list = []
         self.start_right = True
-        
-        snake = []
-        snake_head = Snake_piece(0)  # Nieuw slanghoofd maken
-        snake1 = Snake_piece(1)
-        snake2 = Snake_piece(2)
-        snake3 = Snake_piece(3)
-        snake.append(snake1)
-        snake.append(snake2)
-        snake.append(snake3)
 
         # Reset de appel
-        apple.new_position()  # Zorg dat de appel een nieuwe plek krijgt
+        #apple.new_position()  # Zorg dat de appel een nieuwe plek krijgt
         

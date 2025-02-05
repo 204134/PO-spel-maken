@@ -8,6 +8,16 @@ class Settings():
         
         # Scherm instellen
         self.screen = pygame.display.set_mode((800, 600))
+        
+        '''for i in range(192): 
+            column = i % 12
+            row = i // 16
+            if i % 2 == 0:
+                pygame.draw.rect(settings.screen, 'light gray', [800 - (column * 50), row * 25, 25, 25]) 
+            else:                                                                                
+                pygame.draw.rect(settings.screen, 'light gray', [775 - (column * 50), row * 25, 25, 25]) #Omdat de kleuren niet onder elkaar zitten, heb twee rijen nodig omdat het lichtgrijze bij allebij ergens anders begint.
+        '''
+        
 
         # Spel settings
         self.spel_snelheid = 8
@@ -37,6 +47,6 @@ class Settings():
         self.lose_text_rect = self.lose_text.get_rect(center=self.game_over_rect.center)
         
         # Gebruikte afbeeldingen:
-        self.appel = 'appel.png'
+        self.appel = 'appel_transparant.png' #ChatGPT is gebruikt om van de zwarte achtergrond een transparante achtergrond te maken
         self.slangenhoofd = 'Snake-head.png'
         self.slangenlichaam = 'groen-slanglichaam.png'
