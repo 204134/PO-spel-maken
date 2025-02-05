@@ -48,69 +48,68 @@ game_over = False
 apple_x, apple_y = apple.new_pos()
 
 while running:
-    settings.screen.fill(settings.black)  #Vul de achtergrond met zwart
-    for row in range(24):  # Er zijn 24 rijen van 25 pixels
-        for col in range(32):  # Er zijn 32 kolommen van 25 pixels
-        # Bepaal de kleur op basis van of het een zwart of lichtgrijs vierkant is
+    settings.screen.fill(settings.black)  # Vul de achtergrond met zwart
+
+    # Teken het speelveld
+    for row in range(24):  
+        for col in range(32):  
             if (row + col) % 2 == 0:
                 color = 'light gray'
             else:
                 color = 'dark gray'
-        
-            # Teken het vierkant
             pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
-        
+
+    # Check voor toetsinvoer (beweging)
     up, down, left, right = gf.check_keydown_events(game_over)
+
+    # Check voor knopdruk (opnieuw spelen)
     game_over = button.check_clicked(game_over)
+
     if not game_over:
-        # Beweeg de slang, update & controleer locatie
+        # Beweeg de slang en update locatie
         apple.draw(game_over, apple_x, apple_y)
         moves_list = snake_head.move(up, down, left, right, moves_list)
         snake_head.update(game_over)
+
         if up or down or left or right:
             for snake_part in snake:
-                snake_x, snake_y,direction = snake_part.move(up, down, left, right, moves_list)
+                snake_x, snake_y, direction = snake_part.move(up, down, left, right, moves_list)
                 snake_part.update(game_over)
                 if snake_head.collision(snake_x, snake_y):
                     game_over = True
-           
         else:
             for snake_part in snake:
                 snake_part.move(up, down, left, right, moves_list)
                 snake_part.update(game_over)
-        if snake_head.check_pos():
+
+        if snake_head.check_pos():  # Check of de slang uit de grenzen gaat
             game_over = True
-        
-        #if up or down or left or right: (kijk wat er gebeurt als je 'if snake_head.collision(apple_x, apple_y):' hiervoor vervangt. Het is erg leuk.
+
+        # Check of de slang de appel eet
         if snake_head.collision(apple_x, apple_y):
             apple_x, apple_y = apple.new_pos()
-            n = len(snake)+1
+            n = len(snake) + 1
             snake_piece = Snake_piece(n, snake_x, snake_y, direction, True)
             snake_piece.update(game_over, settings.green)
             snake.append(snake_piece)
-            #print(snake)
-            speed += settings.snelheid_verhoging
+            speed += settings.snelheid_verhoging  # Verhoog de snelheid na het eten van een appel
     else:
-        #game over text
-        game_over_rect = pygame.Rect(150, 200, 500, 150)
-        pygame.draw.rect(settings.screen, gray, game_over_rect)
-        pygame.draw.rect(settings.screen, red, game_over_rect, 5)
-        lose_text = settings.font.render("Jij hebt dit spel verloren", True, white)
-        lose_text_rect = lose_text.get_rect(center=game_over_rect.center)
-        settings.screen.blit(lose_text, lose_text_rect)
-        # Teken het groene vierkant en de tekst
-        #print(game_over)
-        pygame.draw.rect(settings.screen, settings.green, settings.game_over_rect)
-        settings.screen.blit(settings.lose_text, settings.lose_text_rect) 
-        button.draw(200, 400, 400, 50, "Opnieuw starten", settings.red, settings.white)
-        print('reset')
-        gf.reset()
-        game_over = False
+        # Game-over scherm
+        game_over_rect = pygame.Rect(200, 150, 400, 300)
+        pygame.draw.rect(settings.screen, settings.black, game_over_rect)
+        pygame.draw.rect(settings.screen, settings.green, game_over_rect, 5)
 
-        
-       
+        # Tekst weergeven
+        lose_text = settings.font.render("Je hebt verloren!", True, settings.white)
+        lose_text_rect = lose_text.get_rect(center=(400, 250))
+        settings.screen.blit(lose_text, lose_text_rect)
+
+        # Teken de knop "Opnieuw spelen"
+        if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.red, settings.white):
+            gf.reset(apple)  # Reset het spel en de slang
+            game_over = False  # Zet game_over naar False zodat het spel doorgaat
+
     pygame.display.flip()  # Werk het scherm bij
-    clock.tick(speed)  # Beperk de framesnelheid tot 30 FPS
-    
+    clock.tick(speed)  # Beperk de framesnelheid tot de ingestelde snelheid
 
 pygame.quit()
