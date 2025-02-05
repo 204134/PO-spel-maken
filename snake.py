@@ -15,6 +15,7 @@ apple = Apple()
 class Snake_piece():
     def __init__(self, position, x=0, y= 0, direct = 'right', new = False):
         # Slang variabele
+        self.direction = direct
         print (x,y,direct)
         if position == 0:
             self.image = pygame.image.load(settings.slangenhoofd).convert_alpha()
@@ -50,19 +51,23 @@ class Snake_piece():
         if self.position == 0:
             if left:
                 self.x -= settings.snelheid
+                self.direction = 'left'
                 moves_list.append('left')
             elif right:
                 self.x += settings.snelheid
-                #print('2')
+                self.direction = 'right'
                 moves_list.append('right')
             elif up:
                 self.y -= settings.snelheid
-                #print('3')
+                self.direction = 'up'
                 moves_list.append('up')
             elif down:
                 self.y += settings.snelheid
-                #print('4')
+                self.direction = 'down'
                 moves_list.append('down')
+
+            self.rotate_image()  # Roep de functie aan om de afbeelding te roteren
+
             return moves_list
         else:
             #print(moves_list)
@@ -102,7 +107,10 @@ class Snake_piece():
     def update(self, game_over, color=settings.green):
         # Teken de slang
         if not game_over:
-            settings.screen.blit(self.imageSmall, (self.x, self.y))
+            if self.position == 0:
+                settings.screen.blit(self.imageRotated, (self.x, self.y))
+            else:
+                settings.screen.blit(self.imageSmall, (self.x, self.y))
             #pygame.draw.rect(settings.screen, color, (self.x, self.y, settings.snake_width, settings.snake_height))
         
     def collision(self, x, y):
@@ -111,4 +119,16 @@ class Snake_piece():
             print ("collided")
             return True
         return False
+    
+    def rotate_image(self):
+        if self.position == 0:  # Alleen het hoofd moet roteren
+            if self.direction == 'left':
+                self.imageRotated = pygame.transform.rotate(self.imageSmall, 180)
+            elif self.direction == 'right':
+                self.imageRotated = self.imageSmall  # Originele afbeelding
+            elif self.direction == 'up':
+                self.imageRotated = pygame.transform.rotate(self.imageSmall, 90)
+            elif self.direction == 'down':
+                self.imageRotated = pygame.transform.rotate(self.imageSmall, -90)
+
 
