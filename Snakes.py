@@ -108,6 +108,9 @@ while running:
         if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.red, settings.white):
             gf.reset(apple)  # Reset het spel en de slang
             game_over = False  # Zet game_over naar False zodat het spel doorgaat
+        
+        if button.draw(250, 375, 300, 50, "Sluiten", settings.red, settings.white):
+            running = False
 
     pygame.display.flip()  # Werk het scherm bij
     clock.tick(speed)  # Beperk de framesnelheid tot de ingestelde snelheid
