@@ -27,6 +27,9 @@ snake.append(snake2)
 snake3 = Snake_piece(3)
 snake.append(snake3)
 
+#appel/score teller
+appel_score = 0
+
 #Enkele instellingen
 pygame.display.set_caption("Snakes")
 
@@ -103,15 +106,27 @@ while running:
             snake.append(snake_piece)
             speed += settings.snelheid_verhoging  # Verhoog de snelheid na het eten van een appel
             food_sfx.play()
-    else:
+            appel_score += 1
+   else:
         # Game-over scherm
         game_over_rect = pygame.Rect(200, 150, 400, 300)
-        pygame.draw.rect(settings.screen, settings.black, game_over_rect)
-        pygame.draw.rect(settings.screen, settings.green, game_over_rect, 5)
+        # pygame.SRCALPHA betekent dat elke pixel van de surface een individuele alpha-waarde(doorzichtbaarheid) kan hebben
+        # waardoor de game over blok doorzichtig kan zijn!
+        game_over_blok = pygame.Surface((game_over_rect.width, game_over_rect.height), pygame.SRCALPHA)
+        # Vul de surface met een transparante grijze kleur met een alpha van 150
+        game_over_blok.fill((50, 50, 50, 150))
+        settings.screen.blit(game_over_blok, game_over_rect.topleft)
+        # Teken een zwarte rand rond het game-over scherm
+        pygame.draw.rect(settings.screen, settings.black, game_over_rect, 5)
+
 
         # Tekst weergeven
+        score_text = settings.font.render("Appels gegeten: {}".format(appel_score), True, settings.white)
+        score_text_rect = score_text.get_rect(center=(400, 260))
+        settings.screen.blit(score_text, score_text_rect)
+        
         lose_text = settings.font.render("Je hebt verloren!", True, settings.white)
-        lose_text_rect = lose_text.get_rect(center=(400, 250))
+        lose_text_rect = lose_text.get_rect(center=(400, 200))
         settings.screen.blit(lose_text, lose_text_rect)
 
         # Teken de knop "Opnieuw spelen"
