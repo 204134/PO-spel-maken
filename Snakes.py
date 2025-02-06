@@ -40,6 +40,11 @@ gray = (169, 169, 169)
 clock = pygame.time.Clock()
 speed=settings.spel_snelheid
 
+food_sfx = pygame.mixer.Sound('food.mp3') # Deze muziek komt van de github van nilchakraborty: 'https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3'
+gameover_sfx = pygame.mixer.Sound('gameover.mp3')
+music_sfx = pygame.mixer.Sound('music.mp3')
+music_sfx.play()
+
 # Hoofdlus
 running = True
 game_over = False
@@ -77,6 +82,8 @@ while running:
                 snake_part.update(game_over)
                 if snake_head.collision(snake_x, snake_y):
                     game_over = True
+                    gameover_sfx.play()
+                    music_sfx.stop()
         else:
             for snake_part in snake:
                 snake_part.move(up, down, left, right, moves_list)
@@ -84,6 +91,8 @@ while running:
 
         if snake_head.check_pos():  # Check of de slang uit de grenzen gaat
             game_over = True
+            gameover_sfx.play()
+            music_sfx.stop()
 
         # Check of de slang de appel eet
         if snake_head.collision(apple_x, apple_y):
@@ -93,6 +102,7 @@ while running:
             snake_piece.update(game_over, settings.green)
             snake.append(snake_piece)
             speed += settings.snelheid_verhoging  # Verhoog de snelheid na het eten van een appel
+            food_sfx.play()
     else:
         # Game-over scherm
         game_over_rect = pygame.Rect(200, 150, 400, 300)
