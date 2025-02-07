@@ -46,6 +46,7 @@ speed=settings.spel_snelheid
 food_sfx = pygame.mixer.Sound('food.mp3') # Deze muziek komt van de github van nilchakraborty: 'https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3'
 gameover_sfx = pygame.mixer.Sound('gameover.mp3')
 music_sfx = pygame.mixer.Sound('music.mp3')
+music_sfx.set_volume(0.4)
 music_sfx.play()
 
 # Hoofdlus
@@ -64,7 +65,7 @@ while running:
             if (row + col) % 2 == 0:
                 color = 'light gray'
             else:
-                color = 'dark gray'
+                color = 'white'
             pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
 
     # Check voor toetsinvoer (beweging)
