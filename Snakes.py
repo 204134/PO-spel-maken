@@ -130,9 +130,24 @@ while running:
         settings.screen.blit(lose_text, lose_text_rect)
         # Teken de knop "Opnieuw spelen"
         if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.red, settings.white):
-            gf.reset(apple)  # Reset het spel en de slang
+            gf.reset()  # Reset het spel en de slang
             game_over = False  # Zet game_over naar False zodat het spel doorgaat
-
+            snake.clear()
+            snake_head = Snake_piece(0)
+            # de eerste lichaamsdelen
+            snake1 = Snake_piece(1)
+            snake.append(snake1)
+            snake2 = Snake_piece(2)
+            snake.append(snake2)
+            snake3 = Snake_piece(3)
+            snake.append(snake3)
+            speed=settings.spel_snelheid
+            apple_x, apple_y = apple.new_pos()
+            #reset appel/score teller
+            appel_score = 0
+            moves_list = []
+            "ACHTERGROND GELUID HERSTARTEN"
+            
         if button.draw(250, 375, 300, 50, "Sluiten", settings.red, settings.white):
             running = False
 
