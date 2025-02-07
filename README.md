@@ -11,7 +11,7 @@ Dit is onze versie van het klassieke spel "Snakes". Onze project is gemaakt als 
 1. Druk op het groene "code" knop
 2. Druk op "Download ZIP"
 3. Pak het zip-mapje uit
-3. Installeer "Pygame" als u het nog niet heeft
+3. Installeer de benodigde library: PyGame
 3. Open "Snakes.py". Let op er is ook een bestand: "snake.py", deze hoef je niet te openen.
 4. Veel speel plezier :  )
 ```
