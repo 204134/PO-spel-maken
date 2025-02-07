@@ -59,6 +59,8 @@ Dit spel is gemaakt door:
 ## Bronnenlijst
 **De volgende bronnen zijn gebruikt:**
 <br>
+``` chatgpt.com ``` 
+<br>  - Afbeelding veranderen
 ``` https://chatgpt.com ``` 
 <br>  - Afbeelding veranderen <br>
 ``` https://rb.gy/fgkvgf ``` 

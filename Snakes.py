@@ -146,7 +146,8 @@ while running:
             #reset appel/score teller
             appel_score = 0
             moves_list = []
-            "ACHTERGROND GELUID HERSTARTEN"
+            "achtergrond geluid starten (al geregeld)"
+            music_sfx.play()
             
         if button.draw(250, 375, 300, 50, "Sluiten", settings.red, settings.white):
             running = False
