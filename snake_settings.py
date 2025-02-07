@@ -32,7 +32,7 @@ class Settings():
         
         # Slang settings
         self.snelheid = 25
-        self.snakeHead_width = 25
+        self.snakeHead_width = 35
         self.snakeHead_height = 25
         self.snake_width = 25
         self.snake_height = 25
