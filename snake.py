@@ -13,38 +13,40 @@ gf = Game_functions()
 apple = Apple()
 
 class Snake_piece():
-    def __init__(self, position, x=0, y= 0, direct = 'right', new = False):
-        # Slang variabele
-        self.direction = direct
-        print (x,y,direct)
-        if position == 0:
+    def __init__(self, position, x=0, y=0, direct='right', new=False):
+        # Richting en positie van de slangsegmenten
+        self.direction = direct  # Standaard naar rechts
+
+        # Initialisatie van de afbeelding
+        if position == 0:  # Hoofd
             self.image = pygame.image.load(settings.slangenhoofd).convert_alpha()
             self.imageSmall = pygame.transform.scale(self.image, (settings.snakeHead_width, settings.snakeHead_height))
-        else:
+        else:  # Lichaamsdelen
             self.image = pygame.image.load(settings.slangenlichaam).convert_alpha()
             self.imageSmall = pygame.transform.scale(self.image, (settings.snake_width, settings.snake_height))
 
-        if x==0 and y==0:
-            self.x = (gf.x - position*settings.snake_width)
+        # Stel de beginpositie in (standaard beginpunt is (0, 0))
+        if x == 0 and y == 0:
+            self.x = gf.x - position * settings.snake_width
             self.y = gf.y
-        if new == True:
+
+        # Als het een nieuw segment is
+        if new:
             if direct == 'left':
-                print('1')
                 self.x = x + settings.snelheid
-                self.y =y
+                self.y = y
             elif direct == 'right':
-                print('2')
                 self.x = x - settings.snelheid
-                self.y =y
+                self.y = y
             elif direct == 'up':
-                print('3')
                 self.y = y + settings.snelheid
-                self.x =x
+                self.x = x
             elif direct == 'down':
-                print('4')
                 self.y = y - settings.snelheid
-                self.x =x
-        self.position = position
+                self.x = x
+
+        self.position = position  # Het segmentnummer (hoofd of lichaam)
+
         
     def move(self, up, down, left, right, moves_list = []):
         #print(str(up) + str(down) +str(left)+str(right)+str(moves_list))
