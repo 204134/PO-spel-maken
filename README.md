@@ -76,7 +76,6 @@ Dit spel is gemaakt door:
 **De volgende bronnen zijn gebruikt:**
 <br>  - Geheugen opfrissen tijdens programmeren (werken met lijsten, loops, etc.)<br> 
 ``` W3Schools. (z.d.). W3Schools online web tutorials. W3Schools. https://www.w3schools.com``` 
-
 <br>  - Afbeelding veranderen en bronnen in APA stijl zetten <br>
 ```OpenAI. (z.d.). ChatGPT. OpenAI. https://chatgpt.com ``` 
 <br>  - Afbeelding veranderen <br>
