@@ -46,6 +46,7 @@ speed=settings.spel_snelheid
 food_sfx = pygame.mixer.Sound('food.mp3') # Deze muziek komt van de github van nilchakraborty: 'https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3'
 gameover_sfx = pygame.mixer.Sound('gameover.mp3')
 music_sfx = pygame.mixer.Sound('music.mp3')
+music_sfx.set_volume(0.4)
 music_sfx.play()
 
 # Hoofdlus
@@ -62,9 +63,9 @@ while running:
     for row in range(24):  
         for col in range(32):  
             if (row + col) % 2 == 0:
-                color = 'light gray'
+                color = (222,236,237,255)
             else:
-                color = 'dark gray'
+                color = (209,228,230,255)
             pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
 
     # Check voor toetsinvoer (beweging)
@@ -128,10 +129,26 @@ while running:
         lose_text_rect = lose_text.get_rect(center=(400, 200))
         settings.screen.blit(lose_text, lose_text_rect)
         # Teken de knop "Opnieuw spelen"
-        if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.red, settings.white):
-            gf.reset(apple)  # Reset het spel en de slang
+        if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.green, settings.white):
+            gf.reset()  # Reset het spel en de slang
             game_over = False  # Zet game_over naar False zodat het spel doorgaat
-
+            snake.clear()
+            snake_head = Snake_piece(0)
+            # de eerste lichaamsdelen
+            snake1 = Snake_piece(1)
+            snake.append(snake1)
+            snake2 = Snake_piece(2)
+            snake.append(snake2)
+            snake3 = Snake_piece(3)
+            snake.append(snake3)
+            speed=settings.spel_snelheid
+            apple_x, apple_y = apple.new_pos()
+            #reset appel/score teller
+            appel_score = 0
+            moves_list = []
+            "achtergrond geluid starten (al geregeld)"
+            music_sfx.play()
+            
         if button.draw(250, 375, 300, 50, "Sluiten", settings.red, settings.white):
             running = False
 

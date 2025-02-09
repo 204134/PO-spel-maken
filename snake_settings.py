@@ -17,7 +17,9 @@ class Settings():
             else:                                                                                
                 pygame.draw.rect(settings.screen, 'light gray', [775 - (column * 50), row * 25, 25, 25]) #Omdat de kleuren niet onder elkaar zitten, heb twee rijen nodig omdat het lichtgrijze bij allebij ergens anders begint.
         '''
-        
+        # Start settings
+        self.x = 300
+        self.y = 250
 
         # Spel settings
         self.spel_snelheid = 8

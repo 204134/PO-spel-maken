@@ -27,8 +27,8 @@ class Snake_piece():
 
         # Stel de beginpositie in (standaard beginpunt is (0, 0))
         if x == 0 and y == 0:
-            self.x = gf.x - position * settings.snake_width
-            self.y = gf.y
+            self.x = settings.x - position * settings.snake_width
+            self.y = settings.y
 
         # Als het een nieuw segment is
         if new:
@@ -46,7 +46,6 @@ class Snake_piece():
                 self.x = x
 
         self.position = position  # Het segmentnummer (hoofd of lichaam)
-
         
     def move(self, up, down, left, right, moves_list = []):
         #print(str(up) + str(down) +str(left)+str(right)+str(moves_list))
