@@ -1,8 +1,8 @@
 Unit-test: De slang beweegt 1 keer als er op een pijl wordt gedrukt, het blijft niet bewegen.
-		In een while-loop: running, dan blijft de slang bewegen.
+            In een while-loop: running, dan blijft de slang bewegen.
 
 Unit-test: De slang kan terug bewegen. Dus als het naar rechts gaat en je drukt op links pijltje, dan beweegt de slang naar links, terwijl dat niet kan in Snakes.
-		Toegevoegd: variabele die true geven als die richting op gaan en om een andere richting op te gaan, dan moet die variabele false zijn. Dus om naar links te gaan moet de variabele right = false.
+            Toegevoegd: variabele die true geven als die richting op gaan en om een andere richting op te gaan, dan moet die variabele false zijn. Dus om naar links te gaan moet de variabele right = false.
 
 Unit-test: Game_over = True werkt als de slang buiten de rand gaat.
 
@@ -24,12 +24,12 @@ Unit-test: De slang blijft meer bij elkaar maar het hoofd staat met een knik op 
 
 Unit-test: De slang kan op de juiste manier bewegen en het lichaam van de slang beweegt mee.
 
+Unit-test: Kijken of de afbeelding van de appel goed is toegevoegd en kijken of de grootte goed is.
+            De grootte was niet goed dus die is aangepast en nog eens getest.
+
 Unit test: Als het midden van het slangenhoofd en het midden van de huidige appel dezelfde coördinaten krijgen, dan eet de slang de appel. In de praktijk gebeurt dit echter nooit, omdat zowel de slang als de appel niet volgens een vast rooster bewegen, dus het heel lastig is om precies zo te mikken dat de appel en de slang elkaar precies overlappen.
 
-"Rooster slang unit-test?"
 Unit-test: Bij het kiezen van de random coördinaten van de appels, wordt dat nu gedaan door een willekeurig getal uit een range met een sprong van 25 te kiezen. De appels verschijnen nu alleen nog maar op bepaalde plekken volgens een soort rooster.
-
-Integratie-test: De slang en appel kunnen elkaar succesvol raken. Vervolgens gebeurt echter niks naast dat een print functie "collided" weergeeft in de shell. Zowel de slang als de appel voeren niet uit wat ze moeten doen. De nieuwe locatie voor de appel wordt niet op de juist manier opnieuw bepaald, daar zal nog een aparte functie voor geschreven moeten worden. Verder moet ook nog coe worden geschreven die ervoor zorgt dat de slang langer wordt.
 
 Unit-test: De slang wordt langer, maar de nieuwe lichaamsdelen verschijnen weer in het centrum van het speelveld, op de beginpositie. Als een nieuw slangendeel aangemaakt wordt na het eten van een appel moet een apart stuk code uitgevoerd worden waarin wordt bepaald waar deze nieuwe slangendelen terecht moeten komen. Als een parameter 'new' door wordt gegeven als argumet als True, dan wordt dit stuk code uitgevoerd. Zodra niks wordt doorgegeven wordt de parameter automatisch gelijk gesteld aan False. Als een nieuw slangendeel wordt aangemaakt dan moet deze ook de x en y waarden van het laaste slangendeel ontvangen en dan hiermee, samen met de richting, zijn nieuwe locatie bepalen.
 
@@ -41,10 +41,55 @@ Integratie-test: Zodra de middenste coördinaten van de slang en appel samenkome
 
 Unit-test: Als het slangenhoofd botst met een ander deel van de slag wordt de variabele game-over gelijk gesteld aan True. Dit werkt niet doordat de variabele weer wordt overschreven door een functe die daarna controleert of het slagenhoofd buiten het speelveld is en vervolgens game_over gelijk stelt aan de resulterende waarde (True of False). Dit is herschreven zodat game_over niet opnieuw op True gezet kan worden zodra deze False is geworden door de resulterende waarde van de functie voor een if-statement te gebruiken. Hierna werk het.
 
-"Wat hier kwam"
+Unit-test: De opnieuw starten knop nogmaals testen, het werkt niet. Er is hiervoor een issue aangemaakt, die niet gelijk wordt opgelost.
+
+Systeem-test: De slang gedraagt zich goed als het begint naar rechts, maar als het een andere richting begint dan krijg je losse vierkantjes, dus er moet worden voorkomen dat de slang een andere kant op beweegt dan naar rechts in het begin.
+
+Unit-test: Slangenhoofd is toegevoegd en er werd gekeken of het hoofd goed aansluit op het lichaam en de goede grootte wordt getest. Door de rand aan de boven en onderkant lopen de lijnen van het lichaam niet helemaal goed door met het hoofd, maar verder sluit het goed aan.
+
+Unit-test: Slangenlichaam testen of de kleur hetzelfde is als het hoofd en dat is het.
+
+Alpha-test: De functionaliteit van de slang werkt, maar de achtergrond mist een rooster en het slangenhoofd zit niet goed aangesloten aan de onderkant en bovenkant.
+
+Unit-test: Het rooster aan de achterkant zit niet goed. De vierkanten zitten helemaal aan de rechterkant en zijn te groot. Ze zijn dus niet goed geplaatst.
+
+Unit-test: Het achtergrondrooster zit nu wel goed.
+
+Systeem-test: Alle functionaliteiten werken, maar door het rooster klopt de achtergrond van de appel en het slangenhoofd niet. Die zijn namelijk zwart, maar dat komt niet overeen met de achtergrond door de andere kleuren van het rooster.
+
+Unit-test: De achtergrond van de appel testen. De achtergrond is nu transparant en dat ziet er goed uit.
+
+Beta-test: De testers gaven de feedback dat het hoofd niet draait, waardoor dat er raar uitziet als de slang een andere kant op gaat dan naar rechts. Ook werkt de resetknop niet. Het hoofd van de slang heeft een zwarte achtergrond wat niet goed overeenkomt met de achtergrond. Verder is het rooster leuk.
+
+Unit-test: Het testen van het draaien van het hoofd. Het hoofd draait goed.
+
+Integration-test: Door het draaien van het hoofd moet de breedte van het hoofd worden aangepast, want het hoofd zit in het lichaam als de slang naar links gaat.
+
+Unit-test: De breedte van het hoofd van de slang testen. Het hoofd slaat nu goed aan op het lichaam.
+
+Unit-test: De achtergrond van het hoofd van de slang testen. De achtergrond is nu transparant.
+
+Beta-test: De testers gaven de feedback dat de resetknop nog niet werkt en dat het rooster een beetje hypnotiserend werkt en afleidt. Het verkeerde document was geopend om te spelen, omdat de namen op elkaar lijken: Snakes.py en snake.py. Een tester benoemde ook dat het fijn zou zijn als de ASWD knoppen werken om de slang te besturen.
+
+Unit-test: Het testen van de sluit knop. Het werkt.
+
+Unit-test: De geluidseffecten werken.
+
+Systeem-test: De functionaliteiten werken allemaal, alleen de opnieuw knop nog steeds niet. De kleuren hypnotiseren ook een beetje
+
+Unit-test: Er werd getest of de appels correct werden opgeteld en vertelt op het eindscherm. De appels worden correct opgeteld en getoont.
 
 Unit-test: De reset-functie werkt niet, omdat deze niet alle waarden op de juiste manier terugzet naar de waarden die deze in de beginpositie dienen te hebben. Dit is opgelost en nu werkt het.
 
 Integratie-test: De fixing_the_reset_function branch is samengevoegd met de main en na een aantal tests blijkt het op de juiste manier te werken, ook in de context van de main.
 
+Alpha-test: De kleuren hypnotiseren een stuk minder, maar nog steeds een klein beetje.
+
+Unit-test: De ASWD knoppen werken.
+
+Unit-test: Verschillende kleuren voor de achtergrond werden bekeken. De uiteindelijke kleur hypnotiseert niet.
+
+Unit-test: Groene kleur voor opnieuw starten werd getest in plaats van twee keer rood. De groene kleur werd gekozen.
+
+Beta-test: De slang gaat nog iets te snel, verder was er niets meer.
 
