@@ -74,15 +74,14 @@ Dit spel is gemaakt door:
 
 ## Bronnenlijst
 **De volgende bronnen zijn gebruikt:**
-<br>  - Geheugen opfrissen tijdens programmeren (werken met lijsten, loops, etc.)
-``` q3schools.com``` 
-<br> 
-``` chatgpt.com ``` 
+<br>  - Geheugen opfrissen tijdens programmeren (werken met lijsten, loops, etc.)<br> 
+``` W3Schools. (z.d.). W3Schools online web tutorials. W3Schools. https://www.w3schools.com``` 
+
+<br>  - Afbeelding veranderen en bronnen in APA stijl zetten <br>
+```OpenAI. (z.d.). ChatGPT. OpenAI. https://chatgpt.com ``` 
 <br>  - Afbeelding veranderen <br>
-``` https://chatgpt.com ``` 
-<br>  - Afbeelding veranderen <br>
-``` https://rb.gy/fgkvgf ``` 
+``` Stack Overflow. (z.d.). Stack Overflow. Stack Overflow. https://rb.gy/fgkvgf ``` 
 <br>  - Volume van het muziek veranderen <br>
-``` https://rb.gy/fgkvgf ``` 
+``` Stack Overflow. (z.d.). Stack Overflow. Stack Overflow. https://rb.gy/fgkvgf  ``` 
 <br>  - Sound effects
 </html>
