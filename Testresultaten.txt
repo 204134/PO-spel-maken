@@ -32,3 +32,19 @@ Unit-test: Bij het kiezen van de random coördinaten van de appels, wordt dat nu
 Integratie-test: De slang en appel kunnen elkaar succesvol raken. Vervolgens gebeurt echter niks naast dat een print functie "collided" weergeeft in de shell. Zowel de slang als de appel voeren niet uit wat ze moeten doen. De nieuwe locatie voor de appel wordt niet op de juist manier opnieuw bepaald, daar zal nog een aparte functie voor geschreven moeten worden. Verder moet ook nog coe worden geschreven die ervoor zorgt dat de slang langer wordt.
 
 Unit-test: De slang wordt langer, maar de nieuwe lichaamsdelen verschijnen weer in het centrum van het speelveld, op de beginpositie. Als een nieuw slangendeel aangemaakt wordt na het eten van een appel moet een apart stuk code uitgevoerd worden waarin wordt bepaald waar deze nieuwe slangendelen terecht moeten komen. Als een parameter 'new' door wordt gegeven als argumet als True, dan wordt dit stuk code uitgevoerd. Zodra niks wordt doorgegeven wordt de parameter automatisch gelijk gesteld aan False. Als een nieuw slangendeel wordt aangemaakt dan moet deze ook de x en y waarden van het laaste slangendeel ontvangen en dan hiermee, samen met de richting, zijn nieuwe locatie bepalen.
+
+Unit-test: De slang wordt langer zodra deze een appel eet. Werkt.
+
+Unit-test: Met behulp van een functie wordt na het eten van een appel een nieuwe locatie voor de appel bepaald. Werkt.
+
+Integratie-test: Zodra de middenste coördinaten van de slang en appel samenkomen, functioneert het programma zoals dit zou moeten doen.
+
+Unit-test: Als het slangenhoofd botst met een ander deel van de slag wordt de variabele game-over gelijk gesteld aan True. Dit werkt niet doordat de variabele weer wordt overschreven door een functe die daarna controleert of het slagenhoofd buiten het speelveld is en vervolgens game_over gelijk stelt aan de resulterende waarde (True of False). Dit is herschreven zodat game_over niet opnieuw op True gezet kan worden zodra deze False is geworden door de resulterende waarde van de functie voor een if-statement te gebruiken. Hierna werk het.
+
+"Wat hier kwam"
+
+Unit-test: De reset-functie werkt niet, omdat deze niet alle waarden op de juiste manier terugzet naar de waarden die deze in de beginpositie dienen te hebben. Dit is opgelost en nu werkt het.
+
+Integratie-test: De fixing_the_reset_function branch is samengevoegd met de main en na een aantal tests blijkt het op de juiste manier te werken, ook in de context van de main.
+
+
