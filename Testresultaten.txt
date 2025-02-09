@@ -11,3 +11,24 @@ Integration-test: Als de slang buiten de rand gaat, dan wordt het game-over sche
 Unit-test: De opnieuw knop werkt.
 
 Unit-test: De snelheid en de vloeiendheid van de slang is getest. Met vloeiendheid bedoel ik of de slang soepel beweegt of dat je goed de frames ziet. De frames moeten een beetje zichtbaar zijn zodat de gebruiker makkelijk kan kiezen wanneer die moet afslaan. De snelheid en het aantal frames per second is daarop aangepast.
+
+Unit-test: de slang heeft een lichaam van meerdere stukjes die links van de slang verschijnen. Werkt.
+
+Unit-test: de slang beweegt, maar zijn lichaam blijft achter. De commando's worden alleen aan het slangenhoofd door gegeven.
+
+Unit-test: De hele slang beweegt nu succesvol, maar alle lichaamsdelen bewegen dezelfde kant op en niet op de manier dat een slang hoort te bewegen. Er moet een soort lijst gemaakt worden die onthoudt wat de laatste beweging(en) waren van het hoofd en die bewegingen moeten dan doorgegeven worden aan de rest van de slang.
+
+Unit-test: De slang valt uit elkaar zodra wordt begonnen met bewegen, de bewegingen van het hoofd worden nog niet juist doorgegeven. 
+
+Unit-test: De slang blijft meer bij elkaar maar het hoofd staat met een knik op het lichaam alsof de slang zijn net heeft gebroken. De lijst wordt steeds verandert binnen de module, maar moet natuurlijk doorgegeven worden aan de andere modules door via het hoofdprogramma de zet van zojuist bewogen slangendeel op te vragen een door te geven aan het slangendeel dat daarop volgt.
+
+Unit-test: De slang kan op de juiste manier bewegen en het lichaam van de slang beweegt mee.
+
+Unit test: Als het midden van het slangenhoofd en het midden van de huidige appel dezelfde coördinaten krijgen, dan eet de slang de appel. In de praktijk gebeurt dit echter nooit, omdat zowel de slang als de appel niet volgens een vast rooster bewegen, dus het heel lastig is om precies zo te mikken dat de appel en de slang elkaar precies overlappen.
+
+"Rooster slang unit-test?"
+Unit-test: Bij het kiezen van de random coördinaten van de appels, wordt dat nu gedaan door een willekeurig getal uit een range met een sprong van 25 te kiezen. De appels verschijnen nu alleen nog maar op bepaalde plekken volgens een soort rooster.
+
+Integratie-test: De slang en appel kunnen elkaar succesvol raken. Vervolgens gebeurt echter niks naast dat een print functie "collided" weergeeft in de shell. Zowel de slang als de appel voeren niet uit wat ze moeten doen. De nieuwe locatie voor de appel wordt niet op de juist manier opnieuw bepaald, daar zal nog een aparte functie voor geschreven moeten worden. Verder moet ook nog coe worden geschreven die ervoor zorgt dat de slang langer wordt.
+
+Unit-test: De slang wordt langer, maar de nieuwe lichaamsdelen verschijnen weer in het centrum van het speelveld, op de beginpositie. Als een nieuw slangendeel aangemaakt wordt na het eten van een appel moet een apart stuk code uitgevoerd worden waarin wordt bepaald waar deze nieuwe slangendelen terecht moeten komen. Als een parameter 'new' door wordt gegeven als argumet als True, dan wordt dit stuk code uitgevoerd. Zodra niks wordt doorgegeven wordt de parameter automatisch gelijk gesteld aan False. Als een nieuw slangendeel wordt aangemaakt dan moet deze ook de x en y waarden van het laaste slangendeel ontvangen en dan hiermee, samen met de richting, zijn nieuwe locatie bepalen.
