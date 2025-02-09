@@ -63,9 +63,9 @@ while running:
     for row in range(24):  
         for col in range(32):  
             if (row + col) % 2 == 0:
-                color = 'light gray'
+                color = (222,236,237,255)
             else:
-                color = 'white'
+                color = (209,228,230,255)
             pygame.draw.rect(settings.screen, color, [col * 25, row * 25, 25, 25])
 
     # Check voor toetsinvoer (beweging)
@@ -129,7 +129,7 @@ while running:
         lose_text_rect = lose_text.get_rect(center=(400, 200))
         settings.screen.blit(lose_text, lose_text_rect)
         # Teken de knop "Opnieuw spelen"
-        if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.red, settings.white):
+        if button.draw(250, 300, 300, 50, "Opnieuw spelen", settings.green, settings.white):
             gf.reset()  # Reset het spel en de slang
             game_over = False  # Zet game_over naar False zodat het spel doorgaat
             snake.clear()
