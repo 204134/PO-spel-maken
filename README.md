@@ -54,7 +54,10 @@ Het testen ging over het algemeen goed, maar ik heb nu beter geleerd hoe je test
 Ik heb ook geleerd over het verschil tussen verschillende soorten tests, zoals unit tests en alpha tests. Over het belang van al deze soorten tests en ook hoe ik het meeste onbewust al doe. Nu heb ik meer gefocust op hoe en wat ik precies test in plaats van dat ik het meeste onbewust doe.
 
 ### Amber
-tekst hier aub
+Ik vondt dit een erg interresant en leuk PO. <br>
+Ten eerste vond ik het super leuk om eindelijk snake te programmeren in python. Toen ik voor het eerst begon met het leren van python meer dan drie jaar geleden, was mijn plan altijd al om uiteindelijk snake te progammeren. Destijds had ik echter geenidee hoe ik de slang dan op de juiste manier zou moeten laten bewegen en wist ik ook niet goed hoe ik zonder alles op te zoeken een programeerproject moest beginnen. Dat het ons nu is gelukt om succesvol snake te progammeren, bovendien zonder hier simpelweg een tutorial over te volgen, vindt ik heel gaaf. Het leukste was dat het eigenlijk nu helemaal niet zo lastig meer was. Ik vond het dus mooi om mijn vooruitgang met programmeren duidelijk te zien. <br>
+Verder vond ik het interresant om een programmeerproject aan te pakken met de nadruk op testen en gestructureerd alle onderdelen apart eerst aanpassen en uittesten in branches. Dat was weer een hele nieuwe vorm van programmeren en achteraf begrijp ik hoe nuttig het voortdurend testen van alle losse onderdelen is. <br>
+Tot slot heb ik tijdens dit project ook beter leren omgaan met github. Ik zie eindelijk de voordelen van het gebruik van github in en begin het programma al een stuk minder frustrerend te vinden. Tijdens dit project heb ik beter geleerd hoe je bestanden kan 'pullen' en branches aan kan maken om deze dan ofwel te laten ofwel samen te voegen met het main programma. Ook hebben we natuurlijk geleerd om issues aan te maken en op die manier duidelijk te communiceren met het team via github. 
 
 ### Daisy
 Tijdens dit PO heb ik veel bewuster moeten nadenken over de samenwerking onderling. In het vorige PO werkte ik in een duo, waardoor de communicatie eenvoudiger was en de kans kleiner dat we tegelijk in hetzelfde document werkten. Dit keer moest ik hier veel meer op letten om conflicten in documenten te voorkomen. 
@@ -70,7 +73,9 @@ Dit spel is gemaakt door:
 
 ## Bronnenlijst
 **De volgende bronnen zijn gebruikt:**
-<br>
+<br>  - Geheugen opfrissen tijdens programmeren (werken met lijsten, loops, etc.)
+``` q3schools.com``` 
+<br> 
 ``` chatgpt.com ``` 
 <br>  - Afbeelding veranderen <br>
 ``` https://chatgpt.com ``` 
