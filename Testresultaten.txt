@@ -1,0 +1,13 @@
+Unit-test: De slang beweegt 1 keer als er op een pijl wordt gedrukt, het blijft niet bewegen.
+		In een while-loop: running, dan blijft de slang bewegen.
+
+Unit-test: De slang kan terug bewegen. Dus als het naar rechts gaat en je drukt op links pijltje, dan beweegt de slang naar links, terwijl dat niet kan in Snakes.
+		Toegevoegd: variabele die true geven als die richting op gaan en om een andere richting op te gaan, dan moet die variabele false zijn. Dus om naar links te gaan moet de variabele right = false.
+
+Unit-test: Game_over = True werkt als de slang buiten de rand gaat.
+
+Integration-test: Als de slang buiten de rand gaat, dan wordt het game-over scherm met de opnieuw knop correct getoond.
+
+Unit-test: De opnieuw knop werkt.
+
+Unit-test: De snelheid en de vloeiendheid van de slang is getest. Met vloeiendheid bedoel ik of de slang soepel beweegt of dat je goed de frames ziet. De frames moeten een beetje zichtbaar zijn zodat de gebruiker makkelijk kan kiezen wanneer die moet afslaan. De snelheid en het aantal frames per second is daarop aangepast.
