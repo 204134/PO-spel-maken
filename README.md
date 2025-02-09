@@ -31,7 +31,7 @@ Naar rechts ```➡︎``` / ``` D ```
 Het doel van het spel is om zoveel mogelijk appels op te eten door met het hoofd van de slang door de appel heen te gaan
 <br> 
   - Je hoofd mag **NIET** je lichaam aanraken <br>
-  - Je hoofd mad **NIET** de muur aanraken
+  - Je hoofd mag **NIET** de muur aanraken
 
 ## Feedback geven / Bugs melden
 ### Feedback:
