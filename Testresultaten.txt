@@ -91,7 +91,13 @@ Unit-test: Verschillende kleuren voor de achtergrond werden bekeken. De uiteinde
 
 Unit-test: Groene kleur voor opnieuw starten werd getest in plaats van twee keer rood. De groene kleur werd gekozen.
 
-Beta-test: De slang gaat nog iets te snel, verder was er niets meer.
+Alpha-test: Na uitgebreid testen ziet het ernaar uit dat het programma werkt en ook blijft werken. Geen kritieke bugs gevonden dus.
+
+Beta-test 1: Twee gebruikers hebben het spel getest en beiden merkten ze geen problemen met het spel. Eén gebruiker merkte wel op dat het spel een beetje snel saai werd bij gebrek aan geluidseffecten en achtergrond muziek. We hebben besloten dit nog toe te voegen.
+
+Unit-test: Geluid: de geluidseffecten werken perfect en het achtergrond geluid ook. Wanneer de slang dood gaat stopt het geluid en wanneer het spel opnieuw begint doet het achtergrond geluid dit ook. 
+
+Beta-test 2: Een gebruikter merkte op dat de slang nog iets te snel gaat, maar verder was er niets meer.
 
 Release-test: De testers waren tevreden en hadden geen problemen of issues gevonden.
 
