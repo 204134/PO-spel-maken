@@ -31,16 +31,16 @@ class Game_functions():
                 
             # Beweeg de slang alleen als het spel niet over is
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP and not (self.down or self.start_right): #Gestart zorgt ervoor dat er niet kan worden begonnen met naar links te gaan
+                if (event.key == pygame.K_UP or event.key == pygame.K_w) and not (self.down or self.start_right):
                     self.up = True
                     self.left = self.right = False
-                elif event.key == pygame.K_DOWN and not (self.up or self.start_right):
+                elif (event.key == pygame.K_DOWN or event.key == pygame.K_s) and not (self.up or self.start_right):
                     self.down = True
                     self.left = self.right = False
-                elif event.key == pygame.K_LEFT and not (self.right or self.start_right):
+                elif (event.key == pygame.K_LEFT or event.key == pygame.K_a) and not (self.right or self.start_right):
                     self.left = True
                     self.up = self.down = False
-                elif event.key == pygame.K_RIGHT and not self.left:
+                elif (event.key == pygame.K_RIGHT or event.key == pygame.K_d) and not self.left:
                     self.right = True
                     self.up = self.down = False
                     self.start_right = False
