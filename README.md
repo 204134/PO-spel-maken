@@ -17,16 +17,16 @@ Dit is onze versie van het klassieke spel "Snakes". Onze project is gemaakt als 
 ## Spel handleiding
 ### Algemeen
 Je moet het spel beginnen met naar rechts gaan
-``` → ``` <br>
+``` → ``` / ``` D ``` <br>
 Elke keer dat een appel wordt gegeten wordt de snelheid van de slang sneller
 ### Controls
 Het spel wordt gespeeld met de pijltjes knoppen
 <br>
 Naar boven
-``` ↑ ``` <br>
-Naar rechts ```➡︎``` <br>
-Naar beneden ``` ↓ ``` <br>
-Naar links ``` ← ```
+``` ↑ ``` / ``` W ``` <br>
+Naar links ``` ← ``` / ``` A ``` <br>
+Naar beneden ``` ↓ ``` / ``` S ``` <br>
+Naar rechts ```➡︎``` / ``` D ```
 ### Spelregels
 Het doel van het spel is om zoveel mogelijk appels op te eten door met het hoofd van de slang door de appel heen te gaan
 <br> 
@@ -52,8 +52,12 @@ Het testen ging over het algemeen goed, maar ik heb nu beter geleerd hoe je test
 tekst hier aub
 
 ### Daisy
-tekst hier aub
-
+Tijdens dit PO heb ik veel bewuster moeten nadenken over de samenwerking onderling. In het vorige PO werkte ik in een duo, waardoor de communicatie eenvoudiger was en de kans kleiner dat we tegelijk in hetzelfde document werkten. Dit keer moest ik hier veel meer op letten om conflicten in documenten te voorkomen. 
+<br>
+Daarnaast was het gebruik van "Issues" en "Branches" even wennen. Ik merkte vaak op dat ik gewoon gelijk het probleem wou oplossen of iets nieuws toevoegde zonder eerst een issue te maken. Gaandeweg merkte ik wel op dat het gebruik van issues een betere overzicht gaf over alle problemen die we hadden en de dingen die we nog wilden toevoegen. Hierdoor kon je eigenlijk gewoon de issues afgaan en voelde het heel gestructureerd. <br>
+Ook het documenteren van feedback was nieuw voor mij. Wij kregen vaak onze feedback mondeling terug in plaats van op onze feedback formulier. Meestal ging de feedback over verbeterpunten die we zelf al wilden veranderen, waardoor het niet moeilijk was om ze te onthouden. 
+<br>
+Het testen ging vaak best makkelijk, in mijn geval veranderde ik iets en opende het programma om te kijken of het werkte. Hoewel het testen van je programma vanzelfsprekend is, was het expliciet documenteren van de testresultaten een nieuwe ervaring voor mij, maar het gaf wel een goed overzicht.
 ## Contributies
 Dit spel is gemaakt door:
 <br>
@@ -63,7 +67,7 @@ Dit spel is gemaakt door:
 **De volgende bronnen zijn gebruikt:**
 <br>
 ``` chatgpt.com ``` 
-<br>  - Afbeelding veranderen
+<br>  - Afbeelding veranderen <br>
 ``` https://chatgpt.com ``` 
 <br>  - Afbeelding veranderen <br>
 ``` https://rb.gy/fgkvgf ``` 
