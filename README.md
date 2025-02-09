@@ -44,9 +44,14 @@ Het doel van het spel is om zoveel mogelijk appels op te eten door met het hoofd
 ## Evaluatie
 ### Suzanne
 Ik heb veel geleerd van dit PO en heb nu een beter begrip van hoe GitHub werkt. Dit is de derde keer dat ik met GitHub werk, maar nu begrijp ik pas echt hoe ik het moet gebruiken. Ik heb geleerd hoe de commando’s cd en dir werken en waarom ze belangrijk zijn voor GitHub. Ook weet ik nu dat het niet uitmaakt waar je de folder plaatst, zolang je maar in de opdrachtprompt in de juiste directory werkt.
+<br>
 Daarnaast heb ik geleerd hoe je branches maakt en hoe je ze nuttig kunt gebruiken. Ik heb ze vooral ingezet voor het aanpassen van de achtergrond en een deel van het design. Daarbij heb ik ervaren hoe belangrijk het is om branches goed bij te houden. Als je dat niet doet, kan een branch achterlopen op de lokale versie, waardoor het nut ervan verdwijnt. Ook weet ik nu hoe ik handmatig een branch kan mergen om problemen op te lossen.
+<br>
 De issues in GitHub waren niet heel ingewikkeld en ik had ze snel door, maar ik heb wel geleerd hoe je ze effectief kunt inzetten binnen een project.
-Het testen ging over het algemeen goed, maar ik heb nu beter geleerd hoe je tests uitvoert en hoe je de resultaten goed documenteert. Ik begrijp nu ook het verschil tussen verschillende soorten tests, zoals unit tests en alpha tests. Ik heb ook geleerd dat het belangrijk is om de kleine testen te documenteren zoals even kort kijken of de opnieuw knop werkt of om te checken of het pijltje omhoog het doet. IK kon later makkelijker terugkijken naar wat ik heb gedaan en waarom.
+<br>
+Het testen ging over het algemeen goed, maar ik heb nu beter geleerd hoe je tests uitvoert en hoe je de resultaten goed documenteert. Ookal was het documenteren wel even wennen. In het begin moest ik mezelf er steeds aan te herrineren om te documenteren, omdat het vaak maar een kleine verandering was en ik dacht dat het het niet waard was te documenteren.
+<br>
+Ik heb ook geleerd over het verschil tussen verschillende soorten tests, zoals unit tests en alpha tests. Over het belang van al deze soorten tests en ook hoe ik het meeste onbewust al doe. Nu heb ik meer gefocust op hoe en wat ik precies test in plaats van dat ik het meeste onbewust doe.
 
 ### Amber
 tekst hier aub
