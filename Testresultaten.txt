@@ -93,3 +93,5 @@ Unit-test: Groene kleur voor opnieuw starten werd getest in plaats van twee keer
 
 Beta-test: De slang gaat nog iets te snel, verder was er niets meer.
 
+Release-test: De testers waren tevreden en hadden geen problemen of issues gevonden.
+
