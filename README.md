@@ -52,8 +52,6 @@ Daarnaast heb ik geleerd hoe je branches maakt en hoe je ze nuttig kunt gebruike
 <br>
 De issues in GitHub waren niet heel ingewikkeld en ik had ze snel door, maar ik heb wel geleerd hoe je ze effectief kunt inzetten binnen een project.
 <br>
-Soms hadden we nog steeds problemen met dat we tegelijk aan het bestand werkten of dat ik code heb toegevoegd die er niet hoeft te zijn. Dus ik heb geleerd gebruik te maken van git reset --hard origin. Dat zorgt ervoor dat de bestanden op github de lokale bestanden overschrijven, dat is handig als je iets hebt geprobeert wat niet werkt en je terug wilt naar wat er op github staat.
-<br>
 Het testen ging over het algemeen goed, maar ik heb nu beter geleerd hoe je tests uitvoert en hoe je de resultaten goed documenteert. Ookal was het documenteren wel even wennen. In het begin moest ik mezelf er steeds aan te herrineren om te documenteren, omdat het vaak maar een kleine verandering was en ik dacht dat het het niet waard was te documenteren.
 <br>
 Ik heb ook geleerd over het verschil tussen verschillende soorten tests, zoals unit tests en alpha tests. Over het belang van al deze soorten tests en ook hoe ik het meeste onbewust al doe. Nu heb ik meer gefocust op hoe en wat ik precies test in plaats van dat ik het meeste onbewust doe.

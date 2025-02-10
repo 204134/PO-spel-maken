@@ -43,7 +43,7 @@ speed=settings.spel_snelheid
 food_sfx = pygame.mixer.Sound('food.mp3') # Deze muziek komt van de github van nilchakraborty: 'https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3'
 gameover_sfx = pygame.mixer.Sound('gameover.mp3')
 music_sfx = pygame.mixer.Sound('music.mp3')
-music_sfx.set_volume(0.4)
+music_sfx.set_volume(0.4) #Geluid van de muziek aanpassen, anders kun je het food geluid niet meer horen.
 music_sfx.play()
 
 # Hoofdlus
@@ -55,7 +55,6 @@ apple_x, apple_y = apple.new_pos()
 
 while running:
     pygame.display.set_caption('Aantal appels: ' + str(appel_score))
-    settings.screen.fill(settings.black)  # Vul de achtergrond met zwart
 
     # Teken het speelveld
     for row in range(24):  
@@ -94,7 +93,7 @@ while running:
         if snake_head.check_pos():  # Check of de slang uit de grenzen gaat
             game_over = True
             gameover_sfx.play()
-            music_sfx.stop()
+            music_sfx.stop() #Muziek stop met spelen, want je bent dood
 
         # Check of de slang de appel eet
         if snake_head.collision(apple_x, apple_y):
@@ -109,10 +108,9 @@ while running:
     else:
         # Game-over scherm
         game_over_rect = pygame.Rect(200, 150, 400, 300)
-        # pygame.SRCALPHA betekent dat elke pixel van de surface een individuele alpha-waarde(doorzichtbaarheid) kan hebben
-        # waardoor de game over blok doorzichtig kan zijn!
+        #pygame.SRCALPHA betekent dat elke pixel van de surface een individuele alpha-waarde(doorzichtbaarheid) kan hebben waardoor de game over blok doorzichtig kan zijn!
         game_over_blok = pygame.Surface((game_over_rect.width, game_over_rect.height), pygame.SRCALPHA)
-        # Vul de surface met een transparante grijze kleur met een alpha van 150
+        #Vul de surface met een transparante grijze kleur met een alpha van 150
         game_over_blok.fill((50, 50, 50, 150))
         settings.screen.blit(game_over_blok, game_over_rect.topleft)
         # Teken een zwarte rand rond het game-over scherm
@@ -144,11 +142,10 @@ while running:
             #reset appel/score teller
             appel_score = 0
             moves_list = []
-            "achtergrond geluid starten (al geregeld)"
             music_sfx.play()
             
         if button.draw(250, 375, 300, 50, "Sluiten", settings.red, settings.white):
-            running = False
+            running = False #Het hele scherm wordt dan gesloten als er op de knop wordt gedrukt.
 
     pygame.display.flip()  # Werk het scherm bij
     clock.tick(speed)  # Beperk de framesnelheid tot de ingestelde snelheid
