@@ -1,5 +1,8 @@
 
 # Snakes
+Dit spel is gemaakt door:
+<br>
+**Daisy Guan, Amber Slob en Suzanne Azier**
 ## Introductie
 <html>
 Dit is onze versie van het klassieke spel "Snakes". Onze project is gemaakt als opdracht voor onze school St. Michael College.
@@ -67,22 +70,18 @@ Daarnaast was het gebruik van "Issues" en "Branches" even wennen. Ik merkte vaak
 Ook het documenteren van feedback was nieuw voor mij. Wij kregen vaak onze feedback mondeling terug in plaats van op onze feedback formulier. Meestal ging de feedback over verbeterpunten die we zelf al wilden veranderen, waardoor het niet moeilijk was om ze te onthouden. 
 <br>
 Het testen ging vaak best makkelijk, in mijn geval veranderde ik iets en opende het programma om te kijken of het werkte. Hoewel het testen van je programma vanzelfsprekend is, was het expliciet documenteren van de testresultaten een nieuwe ervaring voor mij, maar het gaf wel een goed overzicht.
-## Contributies
-Dit spel is gemaakt door:
-<br>
-**Daisy Guan, Amber Slob en Suzanne Azier**
 
 ## Bronnenlijst
-**De volgende bronnen zijn gebruikt:**
-<br>  - Geheugen opfrissen tijdens programmeren (werken met lijsten, loops, etc.)<br> 
+**De volgende bronnen zijn gebruikt:** <br>
 ``` W3Schools. (z.d.). W3Schools online web tutorials. W3Schools. https://www.w3schools.com``` 
-<br>  - Afbeelding veranderen en bronnen in APA stijl zetten <br>
+<br>  - Geheugen opfrissen tijdens programmeren (werken met lijsten, loops, etc.)<br> 
 ```OpenAI. (z.d.). ChatGPT. OpenAI. https://chatgpt.com ``` 
-<br>  - Afbeelding veranderen <br>
+<br>  - Afbeelding veranderen en bronnen in APA stijl zetten <br>
 ``` Stack Overflow. (z.d.). Stack Overflow. Stack Overflow. https://rb.gy/fgkvgf ``` 
-<br>  - Volume van het muziek veranderen <br>
+<br>  - Afbeelding veranderen <br>
 ``` Stack Overflow. (z.d.). Stack Overflow. Stack Overflow. https://rb.gy/fgkvgf  ``` 
-<br>  - Sound effects <br>
+<br>  - Volume van het muziek veranderen <br>
 ``` Nilchakraborty. (z.d.). Snake-Game/music/music.mp3 at main · nilchakraborty/Snake-Game. GitHub. https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3 ``` 
 <br> - De muziek en geluiden komen van de github van nilchakraborty
+<br>  - Sound effects <br>
 </html>
