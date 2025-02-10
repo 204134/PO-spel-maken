@@ -82,5 +82,7 @@ Dit spel is gemaakt door:
 ``` Stack Overflow. (z.d.). Stack Overflow. Stack Overflow. https://rb.gy/fgkvgf ``` 
 <br>  - Volume van het muziek veranderen <br>
 ``` Stack Overflow. (z.d.). Stack Overflow. Stack Overflow. https://rb.gy/fgkvgf  ``` 
-<br>  - Sound effects
+<br>  - Sound effects <br>
+``` Nilchakraborty. (z.d.). Snake-Game/music/music.mp3 at main · nilchakraborty/Snake-Game. GitHub. https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3 ``` 
+<br> De muziek en geluiden komen van de github van nilchakraborty: 'https://github.com/nilchakraborty/Snake-Game/blob/main/music/music.mp3'
 </html>
