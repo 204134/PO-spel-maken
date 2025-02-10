@@ -101,3 +101,4 @@ Beta-test 2: Een gebruikter merkte op dat de slang nog iets te snel gaat, maar v
 
 Release-test: De testers waren tevreden en hadden geen problemen of issues gevonden.
 
+Feedback: Een testpersoon benoemde dat het leuk zou zijn als je tijdens het spel kunt zien hoeveel appels je hebt gegeten. Nu staat dat links bovenin.

@@ -30,9 +30,6 @@ snake.append(snake3)
 #appel/score teller
 appel_score = 0
 
-#Enkele instellingen
-pygame.display.set_caption("Snakes")
-
 #Kleur en klok instellen
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -57,6 +54,7 @@ game_over = False
 apple_x, apple_y = apple.new_pos()
 
 while running:
+    pygame.display.set_caption('Aantal appels: ' + str(appel_score))
     settings.screen.fill(settings.black)  # Vul de achtergrond met zwart
 
     # Teken het speelveld
